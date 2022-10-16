@@ -9,7 +9,7 @@ public class Livro
     public Livro(Long codigo, String titulo)
     {
         this.codigo = codigo;
-        this.autor = autor;
+        //this.autor = autor;
         this.titulo = titulo;
     }
 
@@ -44,7 +44,9 @@ public class Livro
     @Override
     public String toString() {
         return "Livro{" +
-                "titulo='" + titulo + '\'' +
+                "codigo='" + codigo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", autor=" + autor +
                 '}';
     }
 }

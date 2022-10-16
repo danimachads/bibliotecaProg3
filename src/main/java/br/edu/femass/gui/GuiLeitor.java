@@ -11,6 +11,10 @@ public class GuiLeitor {
     private JButton buttonCadastrarAluno;
     private JPanel jPanel;
 
+    public JPanel getjPanel() {
+        return jPanel;
+    }
+
     public GuiLeitor() {
         buttonCadastrarAluno.addActionListener(new ActionListener() {
             @Override

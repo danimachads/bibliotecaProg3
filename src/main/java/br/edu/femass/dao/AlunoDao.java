@@ -9,20 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AlunoDao extends Persistencia<Aluno> implements Dao<Aluno> {
-    private static final String ARQUIVO_ALUNOS = "alunos.json";
+    //private static final String ARQUIVO_ALUNOS = "alunos.json";
+    List<Aluno> alunos = new ArrayList<Aluno>();
 
     public void gravar(Aluno aluno) throws Exception{
         List<Aluno> alunos = getAll();
         alunos.add(aluno);
         String json = getObjectmapper().writerWithDefaultPrettyPrinter().writeValueAsString(alunos);
-        FileOutputStream out = new FileOutputStream(ARQUIVO_ALUNOS);
+        FileOutputStream out = new FileOutputStream("alunos.json");
         out.write(json.getBytes());
         out.close();
     }
 
     public List<Aluno> getAll() throws Exception{
         try {
-            FileInputStream in = new FileInputStream(ARQUIVO_ALUNOS);
+            FileInputStream in = new FileInputStream("alunos.json");
             String json = new String(in.readAllBytes());
             List<Aluno> alunos = getObjectmapper().readValue(json, new TypeReference<List<Aluno>>(){});
             return alunos;

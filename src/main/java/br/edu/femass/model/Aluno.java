@@ -8,7 +8,7 @@ public class Aluno extends Leitor {
         super(nome, endereco, telefone);
         setPrazoMaximoDevolucao(15);
         this.matricula = matricula;
-        setNextCodigo(this.getCodigo()+1);
+        //setNextCodigo(this.getCodigo()+1);
     }
 
     public String getMatricula() {

@@ -1,5 +1,7 @@
 package br.edu.femass.gui;
 
+import br.edu.femass.dao.AutorDao;
+import br.edu.femass.model.Autor;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,9 +17,19 @@ public class GuiAutor {
         buttonSalvar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Autor gravado!");
+                Autor autor = new Autor(txtNome.getText(), txtSobrenome.getText(), txtNacionalidade.getText());
+                try {
+                    new AutorDao().gravar(autor);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                JOptionPane.showMessageDialog(null, "Autor gravado com sucesso!");
             }
         });
+    }
+
+    public JPanel getjPanel() {
+        return jPanel;
     }
 
     public static void main(String [] args)
