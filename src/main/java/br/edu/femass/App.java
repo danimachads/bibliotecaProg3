@@ -13,13 +13,5 @@ public class App {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-        Aluno aluno2 = new Aluno("1801230012", "Teste", "Rua 0", "229989565945");
-        AlunoDao dao2 = new AlunoDao();
-        try {
-            dao.gravar(aluno2);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
     }
 }
