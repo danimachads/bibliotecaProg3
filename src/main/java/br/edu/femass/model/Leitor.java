@@ -12,8 +12,7 @@ public class Leitor {
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
-        //this.codigo = codigo;
-        //nextCodigo++;
+        this.codigo = codigo;
     }
 
     public Long getCodigo() {
@@ -22,18 +21,6 @@ public class Leitor {
 
     public void setCodigo(Long codigo) {
         this.codigo = codigo;
-    }
-
-    public Long getNextCodigo() {
-        return nextCodigo;
-    }
-
-    public void setNextCodigo() {
-        setNextCodigo(nextCodigo++);
-    }
-
-    public void setNextCodigo(Long nextCodigo) {
-        this.nextCodigo = nextCodigo;
     }
 
     public String getNome() {

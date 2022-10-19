@@ -8,7 +8,6 @@ public class Professor extends Leitor
         super(nome, endereco, telefone);
         this.disciplina = disciplina;
         setPrazoMaximoDevolucao(30);
-        setNextCodigo(this.getCodigo()+1);
     }
 
     public String getDisciplina()
